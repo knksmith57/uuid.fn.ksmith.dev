@@ -1,0 +1,12 @@
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  name: uuid
+  annotations:
+    custom-hostname: uuid ## uuid.fn.ksmith.dev
+spec:
+  template:
+    spec:
+      containers:
+        - image: docker.io/knksmith57/uuid.fn.ksmith.dev
+          imagePullPolicy: Always
